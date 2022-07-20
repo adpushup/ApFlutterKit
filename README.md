@@ -17,7 +17,7 @@ To prepare your app, complete the steps in the following sections:
    With Flutter:
 
     ```bash
-    flutter pub add flutter_svg
+    flutter pub add ap_flutter_kit
     ```
 
    This will add a line like this to your package's pubspec.yaml (and run an implicit `flutter pub get`):
@@ -40,12 +40,12 @@ To prepare your app, complete the steps in the following sections:
 
 ### B: Usage:
 
-You must call `**ApFlutterKit.ping()**` method in your ad’s `onAdImpression()` callback.
+You must call `ApFlutterKit.ping()` method in your ad’s `onAdImpression()` callback.
 
 **Example:**
 
 ```dart
 onAdImpression: (Ad ad) {
-		ApFlutterKit.ping(context, ad.adUnitId, ad.responseInfo?.responseId);
+	ApFlutterKit.ping(context, ad.adUnitId, ad.responseInfo?.responseId);
 }
 ```
