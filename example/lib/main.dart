@@ -19,7 +19,6 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
-
 class _MyAppState extends State<MyApp> {
   // AdRequest. You can add any extra parameter to pass in it.
   static const AdRequest request = AdManagerAdRequest();
@@ -36,7 +35,7 @@ class _MyAppState extends State<MyApp> {
 
   // Function to load a new Interstitial Ad if one is not loaded already.
   void _loadAd() {
-    if(_interstitialAd == null){
+    if (_interstitialAd == null) {
       Fluttertoast.showToast(msg: "Loading Ad...");
       InterstitialAd.load(
           adUnitId: '/6499/example/interstitial',
@@ -50,8 +49,7 @@ class _MyAppState extends State<MyApp> {
             onAdFailedToLoad: (LoadAdError error) {
               _interstitialAd = null;
             },
-          )
-      );
+          ));
     } else {
       Fluttertoast.showToast(msg: "Ad already Loaded");
     }
@@ -64,19 +62,19 @@ class _MyAppState extends State<MyApp> {
       return;
     }
     _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
-      onAdDismissedFullScreenContent: (InterstitialAd ad) {ad.dispose();},
-      onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {ad.dispose();},
-      onAdImpression: (Ad ad) {
-        // Informing about new ad impression to Ap Flutter Kit by sending a ping request to it.
-        //
-        // We need to pass context, Ad Unit Id, and Ad Response ID.
-        ApFlutterKit.ping(context, ad.adUnitId, ad.responseInfo?.responseId);
-      }
-    );
+        onAdDismissedFullScreenContent: (InterstitialAd ad) {
+      ad.dispose();
+    }, onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+      ad.dispose();
+    }, onAdImpression: (Ad ad) {
+      // Informing about new ad impression to Ap Flutter Kit by sending a ping request to it.
+      //
+      // We need to pass context, Ad Unit Id, and Ad Response ID.
+      ApFlutterKit.ping(context, ad.adUnitId, ad.responseInfo?.responseId);
+    });
     _interstitialAd!.show();
     _interstitialAd = null;
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -91,9 +89,17 @@ class _MyAppState extends State<MyApp> {
             mainAxisSize: MainAxisSize.min,
             children: [
               // Button to load new interstitial ad.
-              TextButton(onPressed: () { _loadAd(); }, child: const Text('Load Ad')),
+              TextButton(
+                  onPressed: () {
+                    _loadAd();
+                  },
+                  child: const Text('Load Ad')),
               // Button to show the loaded interstitial ad.
-              TextButton(onPressed: () { _showAd(); }, child: const Text('Show Ad')),
+              TextButton(
+                  onPressed: () {
+                    _showAd();
+                  },
+                  child: const Text('Show Ad')),
             ],
           ),
         ),
