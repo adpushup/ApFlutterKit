@@ -1,0 +1,27 @@
+name: ap_flutter_kit
+description: >-
+  Ap Flutter Kit help you to implement AdPushUp's AdX Ads into your flutter apps.
+
+version: 0.2.3
+homepage: https://github.com/adpushup/ApFlutterKit
+
+environment:
+  sdk: ">=2.17.1 <3.0.0"
+  flutter: ">=2.5.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.adpushup.ap_flutter_kit
+        pluginClass: ApFlutterKitPlugin
