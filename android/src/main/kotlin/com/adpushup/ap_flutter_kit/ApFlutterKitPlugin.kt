@@ -28,7 +28,11 @@ class ApFlutterKitPlugin: FlutterPlugin, MethodCallHandler, ActivityAware {
       val adUnitId : String? = call.argument("adUnitId")
       val adResponseId : String? = call.argument("responseId")
       val extra : String? = call.argument("extra")
-      ApAppKit.ping(activity, adUnitId ?: "NoAdUnitIdFlutterError", adResponseId, extra)
+      val extras : Map<String?, String?> = mapOf(
+        "plugin" to "ApFlutterKit",
+        "screenName" to extra,
+      )
+      ApAppKit.ping(activity, adUnitId ?: "NoAdUnitIdFlutterError", adResponseId, extras)
       result.success(null)
     } else {
       result.notImplemented()

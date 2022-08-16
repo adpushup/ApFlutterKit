@@ -11,7 +11,7 @@ buildscript {
             url 'https://pkgs.dev.azure.com/adpushup/_packaging/adpushup/maven/v1'
             credentials {
                 username "adpushup"
-                password "kaq3x7xocgw54xs6j74s5kbgrwg4ypz4ih4y45xd6nezro3qwhfq"
+                password "grs27r4xxaob7rds3h64xlh2ft6va2kx54l5jaqmhd3doh3ubc3q"
             }
         }
     }
@@ -31,7 +31,7 @@ rootProject.allprojects {
             url 'https://pkgs.dev.azure.com/adpushup/_packaging/adpushup/maven/v1'
             credentials {
                 username "adpushup"
-                password "kaq3x7xocgw54xs6j74s5kbgrwg4ypz4ih4y45xd6nezro3qwhfq"
+                password "grs27r4xxaob7rds3h64xlh2ft6va2kx54l5jaqmhd3doh3ubc3q"
             }
         }
     }
@@ -62,6 +62,6 @@ android {
 }
 
 dependencies {
-    implementation 'adpushup:ApAppKit:0.2.3'
+    implementation 'adpushup:ApAppKit:0.2.5'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
