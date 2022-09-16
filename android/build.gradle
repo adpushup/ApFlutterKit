@@ -6,14 +6,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        maven {
-            name 'apappkit'
-            url 'https://pkgs.dev.azure.com/adpushup/_packaging/adpushup/maven/v1'
-            credentials {
-                username "adpushup"
-                password "grs27r4xxaob7rds3h64xlh2ft6va2kx54l5jaqmhd3doh3ubc3q"
-            }
-        }
+        maven { url 'https://jitpack.io' }
     }
 
     dependencies {
@@ -26,14 +19,7 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
-        maven {
-            name 'apappkit'
-            url 'https://pkgs.dev.azure.com/adpushup/_packaging/adpushup/maven/v1'
-            credentials {
-                username "adpushup"
-                password "grs27r4xxaob7rds3h64xlh2ft6va2kx54l5jaqmhd3doh3ubc3q"
-            }
-        }
+        maven { url 'https://jitpack.io' }
     }
 }
 
@@ -41,7 +27,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -62,6 +48,6 @@ android {
 }
 
 dependencies {
-    implementation 'adpushup:ApAppKit:0.2.5'
+    implementation 'com.adpushup:ApAppKit:0.3.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
