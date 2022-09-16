@@ -24,7 +24,7 @@ To prepare your app, complete the steps in the following sections:
 
     ```yaml
     dependencies:
-      ap_flutter_kit: ^0.2.3
+      ap_flutter_kit: ^0.3.0
     ```
 
    Alternatively, your editor might support `flutter pub get`. Check the docs for your editor to learn more.
